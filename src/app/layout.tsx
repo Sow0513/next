@@ -26,9 +26,17 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
+        <div className="flex m-5 gap-3">
+          <p className="rounded-full text-black bg-white p-3 ">Dashboard</p>
+          <p className="rounded-full text-black bg-white p-3">profile</p>
+        </div>
         {children}
+        <div className="flex  content-end">
+          <p>footer</p>
+        </div>
       </body>
     </html>
   );
