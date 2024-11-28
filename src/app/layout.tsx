@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { ThemeProvider } from "@/providers/theme-provider";
+import { ModeToggle } from "@/components/theme-toggle";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,7 +35,10 @@ export default function RootLayout({
           <p className="rounded-full text-black bg-white p-3 ">Dashboard</p>
           <p className="rounded-full text-black bg-white p-3">profile</p>
         </div>
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system">
+          <ModeToggle />
+          {children}
+        </ThemeProvider>
         <div className="flex  content-end">
           <p>footer</p>
         </div>
