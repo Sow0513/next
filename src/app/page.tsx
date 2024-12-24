@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div>
       <div
-        className="bg-stone-200 h-[1200px]  "
+        className="bg-stone-200 h-[1500px]  "
         style={{ borderRadius: "80px 80px 0px 0px" }}
       >
         <div

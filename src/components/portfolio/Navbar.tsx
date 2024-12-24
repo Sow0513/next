@@ -24,6 +24,7 @@ import {
   TriangleRight,
   Videotape,
 } from "lucide-react";
+import { brands } from "../constants/Brands-data";
 
 export const NavBar = () => {
   const navMenus = navBarMenus();
@@ -113,67 +114,37 @@ export const NavBar = () => {
           <ButtonWithIcon name="Latest Shots" />
         </div>
       </div>
-      <div
-        className="flex justify-evenly  z-index:-10 m-10"
-        style={{ borderRadius: "0px 0px 100px 100px" }}
-      >
-        <div className="flex m-10">
-          <MapIcon />
-          <p>
-            National
-            <br />
-            bank
-          </p>
+      <div style={{ borderRadius: "0px 0px 100px 100px" }}>
+        <div className="my-14 flex justify-evenly bg-red">
+          {brands.map((brand, index) => {
+            return (
+              <img
+                key={index}
+                className="grayscale object-contain w-[150px] h-[150px]"
+                src={brand}
+              />
+            );
+          })}
         </div>
-        <div className="flex m-10">
-          <p>mattered</p>
-          <img
-            src="https://cdn.iconscout.com/icon/premium/png-512-thumb/right-triangle-top-right-9115571-7477482.png?f=webp&w=256"
-            className="h-[10px] w-[20px]"
-          />
-        </div>
-        <div className="m-10">
-          <img
-            src="https://cdn-icons-png.flaticon.com/128/16183/16183588.png"
-            className="h-[50px] w-[60px]"
-          />
-        </div>
-        <div className="flex m-10">
-          <img
-            src="https://cdn-icons-png.flaticon.com/128/15465/15465572.png"
-            className="h-[30px] w-[30px] m-1"
-          />
-          <p className="m-2">Adobe</p>
-        </div>
-
-        <img
-          src="https://bllighting.com/wp-content/uploads/2016/12/logo-subway.jpg"
-          className="h-[40px] w-[0px] m-10"
-        />
-
-        <img
-          src="https://cdn.iconscout.com/icon/free/png-512/free-codecademy-logo-icon-download-in-svg-png-gif-file-formats--company-brand-world-logos-vol-9-pack-icons-282922.png?f=webp&w=256"
-          className="h-[80px] w-[80px] m-5"
-        />
       </div>
       <div>
-        <span className="font-semibold grid text-center content-center my-10 p-6">
+        <span className="font-semibold grid text-center content-center my-10 p-6 font-sans text-2xl leading-loose">
           Collaborate with brands and agencies
           <br />
           to create impactful results.
         </span>
         <div>
           <hr className="w-[1000px] mx-60 border-black " />
-          <button className=" mx-auto  bg-white mb-10 flex items-center justify-center h-[40px] w-[100px] text-sm rounded-full   text-center p-2 -translate-x-8 origin-top-left rotate-[-20deg] border text-black ">
+          <button className=" mx-auto  bg-white mb-10 flex items-center justify-center h-[40px] w-[112px] text-sm rounded-full   text-center p-2 -translate-y-3 origin-top-left rotate-[-10deg] border text-black ">
             services
           </button>
         </div>
       </div>
       <div className="flex items-center justify-center">
         <div className="m-5">
-          <Videotape />
-          <h3 className="font-semibold mt-5">UI & UX</h3>
-          <p>
+          <Videotape className=" object-contain my-11" size={35} />
+          <h3 className="font-semibold mb-2 font-serif">UI & UX</h3>
+          <p className="text-sm">
             Designing Interfaces that are
             <br />
             intuitive,efficient,and
@@ -182,12 +153,12 @@ export const NavBar = () => {
           </p>
         </div>
         <div className="m-5">
-          <div className="flex">
-            <Cable />
-            <Smartphone />
+          <div className="flex my-11">
+            <Cable className=" object-contain " size={35} />
+            <Smartphone className=" object-contain " size={35} />
           </div>
-          <h3 className="font-semibold mt-5">Web & Mobile app</h3>
-          <p>
+          <h3 className="font-semibold mb-2 font-serif">Web & Mobile app</h3>
+          <p className="text-sm">
             Designing Interfaces that are
             <br />
             intuitive,efficient,and
@@ -196,13 +167,26 @@ export const NavBar = () => {
           </p>
         </div>
         <div className="m-5">
-          <div className="flex">
-            <DraftingCompass />
-            <Pipette />
+          <div className="grid my-6">
+            <div className="flex mt-6 ">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/4507/4507860.png"
+                className="h-[20px] w-[20px]"
+              />
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/4722/4722396.png"
+                className="h-[20px] w-[20px] rotate-[-40deg]"
+              />
+            </div>
+            <div className="grid">
+              <RectangleEllipsis
+                className=" object-contain w-[30px]  "
+                size={30}
+              />
+            </div>
           </div>
-          <RectangleEllipsis />
-          <h3 className="font-semibold mt-5">Design & Creative</h3>
-          <p>
+          <h3 className="font-semibold mb-2 font-serif">Design & Creative</h3>
+          <p className="text-sm">
             Designing Interfaces that are
             <br />
             intuitive,efficient,and
@@ -211,9 +195,9 @@ export const NavBar = () => {
           </p>
         </div>
         <div className="m-5">
-          <MonitorSpeaker />
-          <h3 className="font-semibold mt-5">Design & Creative</h3>
-          <p>
+          <MonitorSpeaker className=" object-contain my-9" size={45} />
+          <h3 className="font-semibold mb-2 font-serif">Development</h3>
+          <p className="text-sm">
             Designing Interfaces that are
             <br />
             intuitive,efficient,and
@@ -223,15 +207,15 @@ export const NavBar = () => {
         </div>
       </div>
       <div
-        className="bg-stone-100  h-[450px] p-10"
+        className="bg-stone-100  h-[380px] p-10 my-10"
         style={{ borderRadius: "80px 80px 100px 100px" }}
       >
         <Handshake className=" flex justify-center mx-auto rounded-full h-[70px] w-[70px] bg-white border border-gray-200" />
-        <p className="text-center  text-xl font-semibold p-5">
+        <p className="text-center  text-2xl font-semibold p-5 font-sans">
           Tell me about your next
           <br /> project
         </p>
-        <div className="flex justify-center m-5">
+        <div className="flex justify-center my-6">
           <button className="flex h-[40px] w-[120px] bg-black text-white p-2 text-sm rounded-full mx-2">
             <Mail className="mx-2" />
             <p>Email me</p>
